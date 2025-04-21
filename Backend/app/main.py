@@ -2,10 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_breast_cancer
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 #Lectura
-ruta = "https://docs.google.com/spreadsheets/d/1mYcXGzyLTId_Mwv-NWLg3xj2CxCUT3Jt/export?format=csv"
+ruta = os.getenv("DB_URL")
 data= pd.read_csv(ruta)
+
 
 try:
     data = pd.read_csv(ruta)
